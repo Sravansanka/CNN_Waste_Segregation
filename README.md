@@ -1,5 +1,5 @@
 
-# 🧠 CNN Waste Segregation – Deep Learning Project
+# 🧠 CNN Waste Segregation
 
 A CNN-based image classification project focused on automating the segregation of waste into predefined categories. Implemented in Jupyter Notebook using TensorFlow/Keras, this project evaluates three different CNN models and identifies the most effective architecture based on accuracy and loss metrics.
 
@@ -85,10 +85,7 @@ The goal of this project is to develop a robust waste classification model to su
 - Seaborn
 - Jupyter Notebook
 
----
-
-## 🔮 Future Scope
-
-- Deploy final model using Streamlit or Flask
-- Integrate with a camera feed for real-time predictions
-- Extend classification to include more granular waste categories
+##📬 Contact
+For any queries or collaboration: [Sravana Kumar Sanka]
+📧 Email: sravan.sanka97@gmail.com
+🔗 GitHub: [github.com/Sravansanka/CNN_Waste_Segregation](https://github.com/Sravansanka/CNN_Waste_Segregation)]
