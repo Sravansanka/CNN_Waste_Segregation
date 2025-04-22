@@ -21,43 +21,71 @@ The goal of this project is to develop a robust waste classification model to su
 
 ## 🏗️ Model Architectures Analyzed
 
-### 🔹 **Model 1: Basic CNN**
-- 2 Convolutional layers + MaxPooling
-- 1 Dense layer with 64 units
-- Output layer with Softmax activation
-- **Performance:**
-  - Training Accuracy: 86%
-  - Validation Accuracy: 84%
-  - Observations: Basic model with underfitting signs; good as baseline.
+## **With Custom Model 1** 🛠️
 
-### 🔹 **Model 2: Deeper CNN with Dropout**
-- 3 Convolutional layers + MaxPooling
-- Dropout layers to prevent overfitting
-- Dense layer with 128 units
-- **Performance:**
-  - Training Accuracy: 91%
-  - Validation Accuracy: 89%
-  - Observations: Improved accuracy with better generalization; reduced overfitting due to Dropout.
+- **Custom Model 1** achieved an overall accuracy of **61%**, showing solid improvement over the baseline. 📈
+- **Cardboard** and **Plastic** had the best performance, with **F1-scores** of **0.73** and **0.69**, respectively. 📦🛢️
+- Lower scores for **Other**, **Paper**, and **Glass** suggest potential confusion or class overlap, which may require further attention. 🚧📉
 
-### 🔹 **Model 3: Advanced CNN with Batch Normalization**
-- 3 Convolutional layers with Batch Normalization
-- MaxPooling and Dropout for regularization
-- Dense layers with 256 and 128 units
-- **Performance:**
-  - Training Accuracy: 94%
-  - Validation Accuracy: 92%
-  - Observations: Best performance among all models; faster convergence and good generalization.
+---
+
+## **With Custom Model 2** 🛠️💡
+
+- **Custom Model 2** achieved a higher overall accuracy of **66%**, improving across most classes compared to Model 1. 📊🔝
+- Top-performing classes include **Cardboard** (**F1-score 0.78**) and **Plastic** (**F1-score 0.72**), showing strong consistency. 📦🛢️
+- Performance for **Other** and **Paper** remains moderate, indicating room for refinement in distinguishing these categories. ✋📜
+
+---
+
+## **With MobileNet-V2 Model** 📱🚀
+
+- The **MobileNet V2** customized model achieved an impressive **84% accuracy**, significantly outperforming previous models. 🌟📈
+- High **F1-scores** across all classes, especially **Cardboard** (**0.92**), **Metal** (**0.90**), and **Food Waste** (**0.86**), reflect strong generalization. 📦🔩🍲
+- Even lower-performing classes like **Paper** and **Other** show solid improvements, making this model highly reliable overall. 📑🔄
+
 
 ---
 
 ## 📌 Conclusion
 
-- **Model 3** demonstrated the best performance in terms of both training and validation accuracy, with strong generalization and minimal overfitting.
-- Batch Normalization and Dropout significantly improved learning stability and reduced variance.
-- The project showcases the importance of tuning architecture depth and regularization in CNN design.
+## **Findings from the Data**
 
-✅ **Final Model Chosen:** Model 3  
-📈 **Best Accuracy Achieved:** 94% (training), 92% (validation)
+- The dataset consists of images categorized into seven classes: **Metal**, **Other**, **Glass**, **Food Waste**, **Paper**, **Plastic**, and **Cardboard**. 🗑️🖼️
+
+- As shown in the class distribution chart above, the dataset is **imbalanced**, with **Plastic** having the highest number of samples, while **Cardboard** has the fewest. ⚖️📊
+
+- This imbalance could lead to biased model predictions, particularly favoring the majority class (**Plastic**). ⚠️🔍
+
+- To address this, **data augmentation** has been applied to balance the dataset. 🔄✨
+
+- Some classes (such as **Food Waste** and **Plastic**) exhibit considerable variation in appearance, which may complicate classification. 🍲🛢️
+
+- **Visually similar materials**, like **Plastic** and **Glass**, may confuse the model due to overlapping textures or colors. 🥤🍷
+
+- Variations in **image quality** or **lighting conditions** may introduce noise, potentially affecting model performance. 🌥️📸
+
+---
+
+## **Model Training and Results**
+
+- A **Convolutional Neural Network (CNN)** was trained from scratch, followed by using a predefined architecture, and ultimately with **augmentation techniques**. 🤖📈
+
+- The input image size was resized to **(128, 128, 3)** to preserve key features. 🖼️🔍
+
+  **Note:** I attempted to use the dimension **(224, 224, 3)**, but Google Colab crashed multiple times. 😵💻
+
+- The model with predefined layers exhibited **significant improvement** in accuracy and **reduced overfitting**. 📊🔧
+
+- **Callbacks** such as **EarlyStopping**, **ModelCheckpoint**, and **ReduceLROnPlateau** were employed to stabilize and optimize the training process. ⏱️💡
+
+---
+
+## **Key Insights**
+
+- **Image resolution** and **class balance** have a major impact on the performance of the classification model. 🖼️⚖️
+
+- Effective use of **callbacks** not only helped preserve the best-performing model but also prevented unnecessary training cycles, optimizing the overall training time. ⏳🎯
+
 
 ---
 
