@@ -112,6 +112,7 @@ The goal of this project is to develop a robust waste classification model to su
 - Matplotlib
 - Seaborn
 - Jupyter Notebook
+- Collab
 
 ##📬 Contact
 For any queries or collaboration: [Sravana Kumar Sanka]
